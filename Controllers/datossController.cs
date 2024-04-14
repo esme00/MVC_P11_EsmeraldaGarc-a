@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVC_P11_EsmeraldaGarcía.Models;
 
-namespace MVC_P11_EsmeraldaGarcía.Properties
+namespace MVC_P11_EsmeraldaGarcía.Controllers
 {
     public class datossController : Controller
     {
