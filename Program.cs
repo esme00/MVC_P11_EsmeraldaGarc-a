@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using MVC_P11_EsmeraldaGarcía.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<datoContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("datossDbConnection")
+        )
+);
 
 var app = builder.Build();
 
