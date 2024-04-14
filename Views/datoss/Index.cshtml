@@ -1,0 +1,133 @@
+﻿<h1> DATOS</h1>
+</br>
+<form asp-action="Crear">
+    <div class=" form-group row mb-4">
+        <div class="row mt-3">
+            <lable>
+                       Nombre
+            </lable>
+            <div class="col-sm-4">
+                @Html.TextBox("name_user", "", new { @class = "form-control" })
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <lable>
+                Password
+            </lable>
+            <div class="col-sm-4">
+                @Html.Password("password", "", new { @class = "form-control" })
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <lable>
+                Genero
+            </lable>
+            <div class="col-sm-4">
+                @Html.RadioButton("genero", "Masculino", false, new { id = "id_dato" })
+                Masculino
+                @Html.RadioButton("genero", "Femenino", false, new { id = "id_dato" })
+                Femenino
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <lable>
+                Direccion 
+            </lable>
+            <div class="col-sm-4">
+                @Html.TextArea("direction", "Ingrese su direccion",
+                         new { @class = "form-control", id = "id_dato" })
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <lable>
+                Pasatiempos
+            </lable>
+            <div class="col-sm-4">
+                <label><input type="checkbox" name="pasatiempo" value="Bailar" /> Bailar</label>
+                <label><input type="checkbox" name="pasatiempo" value="Correr" /> Correr</label>
+                <label><input type="checkbox" name="pasatiempo" value="Escalar" /> Escalar</label>
+                <label><input type="checkbox" name="pasatiempo" value="Peliculas" /> Películas</label>
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <lable>
+                Cursos
+            </lable>
+            <div class="col-sm-4">
+                <select name ="id_cursos" id="id_dato" >
+                    <option value="">---Seleccione Curso---</option>
+                    <option selected="selected">POO</option>
+                    <option>DAW</option>
+                    <option>MICRO</option>
+                    <option>SI</option>
+                    <option>REDES</option>
+
+                </select>
+            </div>
+
+        </div>
+        <div class="row mt-3">
+            <lable>
+                Habilidades
+            </lable>
+            <div class="col-sm-4">
+                <select name="conocimientos" id="id_dato">
+                    <option value="1">C#</option>
+                    <option value="2">ASP.NET</option>
+                    <option value="2">JAVA</option>
+
+
+               
+
+                </select>
+            </div>
+
+        </div>
+
+
+        @*BTN GUARDADO*@
+        <div class="form-group row mb-4">
+            <div class="col-sm-2">
+            </div>
+            <div class="col-sm-4" style="margin-top: 20px;">
+                <input type="submit" class="btn-primary" value="Guardar" />
+            </div>
+        </div>
+        @* FIN BTN GUARDADO*@
+
+        <table class="table table-sm">
+            <thead>
+                <tr class="text-md-center">
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Genero</th>
+                    <th>Cursos</th>
+                    <th>Pasatiempos</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dato in (IEnumerable<dynamic>)ViewData["listadodedato"])
+                {
+                    <tr>
+                        <td>@dato.Nombre</td>
+                        <td>@dato.Descripcion</td>
+                        <td>@dato.Genero</td>
+                        <td>@dato.Cursos</td>
+                        <td>@dato.Pasatiempo</td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+        @* FIN TABLA*@
+
+
+
+
+    </div>
+</form>
