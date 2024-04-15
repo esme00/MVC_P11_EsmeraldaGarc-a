@@ -2,6 +2,8 @@
 </br>
 <form asp-action="Crear">
     <div class=" form-group row mb-4">
+        
+        @* NOMBRE *@
         <div class="row mt-3">
             <lable>
                        Nombre
@@ -11,6 +13,10 @@
             </div>
 
         </div>
+
+        @* FIN NOMBRE *@
+
+        @* CONTRASENA *@
         <div class="row mt-3">
             <lable>
                 Password
@@ -18,8 +24,10 @@
             <div class="col-sm-4">
                 @Html.Password("password", "", new { @class = "form-control" })
             </div>
-
         </div>
+        @* FIN CONTRASENA *@
+
+        @* GENERO *@
         <div class="row mt-3">
             <lable>
                 Genero
@@ -30,8 +38,10 @@
                 @Html.RadioButton("genero", "Femenino", false, new { id = "id_dato" })
                 Femenino
             </div>
-
         </div>
+        @* FIN GENERO *@
+
+        @* DIRECCION *@
         <div class="row mt-3">
             <lable>
                 Direccion 
@@ -40,8 +50,10 @@
                 @Html.TextArea("direction", "Ingrese su direccion",
                          new { @class = "form-control", id = "id_dato" })
             </div>
-
         </div>
+        @* FIN DIRECCION *@
+
+        @* PASATIEMPOS *@
         <div class="row mt-3">
             <lable>
                 Pasatiempos
@@ -52,8 +64,10 @@
                 <label><input type="checkbox" name="pasatiempo" value="Escalar" /> Escalar</label>
                 <label><input type="checkbox" name="pasatiempo" value="Peliculas" /> Películas</label>
             </div>
-
         </div>
+            @* FIN PASARTIEMPOS *@
+
+            @* CURSOS *@
         <div class="row mt-3">
             <lable>
                 Cursos
@@ -69,8 +83,10 @@
 
                 </select>
             </div>
-
         </div>
+        @* FIN CURSOS *@
+
+        @* HABILIDADES *@
         <div class="row mt-3">
             <lable>
                 Habilidades
@@ -86,8 +102,8 @@
 
                 </select>
             </div>
-
         </div>
+        @* FIN HABILIDADES *@
 
 
         @*BTN GUARDADO*@
@@ -100,6 +116,7 @@
         </div>
         @* FIN BTN GUARDADO*@
 
+        @* INICIO TABLA *@
         <table class="table table-sm">
             <thead>
                 <tr class="text-md-center">

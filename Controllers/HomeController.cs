@@ -34,12 +34,14 @@ namespace MVC_P11_EsmeraldaGarcía.Controllers
         [HttpPost]
         public  async Task<ActionResult> SubirArchivo(IFormFile archivo)
         {
+            //Leemos el archivo subido
             Stream archivoASubir = archivo.OpenReadStream();
 
-            string email = "esmeralda.garcia1@catolica.edu.sv";
-            string clave = "abril2024";
-            string ruta = "mvcp11esmeraldagarcia.appspot.com";
-            string api_key = "AIzaSyBgLO7IwDKSEs6X-9DydDr7LtxN9ztwRqQ";
+            //ConfigurationRoot la conexion hacia FareBase
+            string email = "esmeralda.garcia1@catolica.edu.sv"; /*Correo para autenticar en FireBase*/
+            string clave = "abril2024";     //Contraseña establecida en ela auticacion en FireBase
+            string ruta = "mvcp11esmeraldagarcia.appspot.com";   // URL donde se guardaran los arhivos
+            string api_key = "AIzaSyBgLO7IwDKSEs6X-9DydDr7LtxN9ztwRqQ";  //API_KEY indentificador del proyecto en FireBase
 
             var auth = new FirebaseAuthProvider(new FirebaseConfig(api_key));
 

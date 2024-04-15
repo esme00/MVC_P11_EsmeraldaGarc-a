@@ -14,7 +14,6 @@ namespace MVC_P11_EsmeraldaGarcía.Models
         public string? pasatiempo { get; set; }
         public string? id_cursos { get; set; }
         public string? conocimientos { get; set; }
-        public string? foto { get; set; }
 
     }
 }

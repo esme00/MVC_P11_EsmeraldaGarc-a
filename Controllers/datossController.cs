@@ -5,8 +5,10 @@ namespace MVC_P11_EsmeraldaGarcía.Controllers
 {
     public class datossController : Controller
     {
+        
         public IActionResult Index()
         {
+            //Para mostrar en la tabka
             var listadodedato = (from e in _datoContext.dato
                                  select new
                                  {
@@ -20,10 +22,12 @@ namespace MVC_P11_EsmeraldaGarcía.Controllers
             return View();
         }
         public IActionResult Crear(dato nuevodato)
-        {
+        {   
+              //Crear y guardar los nuevos datos
             _datoContext.Add(nuevodato);
             _datoContext.SaveChanges();
 
+            //retorna al index
             return RedirectToAction("Index");
         }
 

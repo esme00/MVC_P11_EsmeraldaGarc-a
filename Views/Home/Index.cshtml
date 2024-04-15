@@ -7,8 +7,10 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
 
+
+    @* AGREGAR ARCHIVO A FIREBASE *@
       <form asp-action="SubirArchivo" method="post" enctype="multipart/form-data">
-        <div class="form-group">
+        <div class="form-group mt-4">
             <label for="archivo">Seleccione el archivo a cargar</label>
             <input type="file" class="form-control" id="archivo" name="archivo" />
 
